@@ -21,8 +21,8 @@ export const serverSchema = z.object({
   ),
   DISCORD_CLIENT_ID: z.string(),
   DISCORD_CLIENT_SECRET: z.string(),
-  RUSTAUTH_PLAYERID: z.string(),
-  RUSTAUTH_PLAYERTOKEN: z.number(),
+  RUSTAUTH_PLAYER_ID: z.string(),
+  RUSTAUTH_PLAYER_TOKEN: z.string(),
 });
 
 /**
