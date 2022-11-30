@@ -5,13 +5,11 @@ import classNames from "classnames";
 import { Session } from "next-auth";
 import { signOut } from "next-auth/react";
 import { SignOutModal } from "./SignOutModal";
+import Link from "next/link";
 
 const navigation = [
   { name: "Dashboard", href: "dashboard", current: true },
-  { name: "Devices", href: "#", current: false },
-  { name: "Interactive Map", href: "#", current: false },
   { name: "Settings", href: "#", current: false },
-  { name: "Connect", href: "connect", current: false },
 ];
 
 export default function Header({ session }: { session: Session }) {
@@ -60,7 +58,7 @@ export default function Header({ session }: { session: Session }) {
                   <div className="hidden sm:ml-6 sm:block">
                     <div className="flex space-x-4">
                       {navigation.map((item) => (
-                        <a
+                        <Link
                           key={item.name}
                           href={item.href}
                           className={classNames(
@@ -72,7 +70,7 @@ export default function Header({ session }: { session: Session }) {
                           aria-current={item.current ? "page" : undefined}
                         >
                           {item.name}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </div>
